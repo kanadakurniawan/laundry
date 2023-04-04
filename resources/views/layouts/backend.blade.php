@@ -147,6 +147,24 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
+            <li class="menu-item">
+              <a href="index.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Pesanan</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="index.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Paket</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="index.html" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">User</div>
+              </a>
+            </li>
 
             <!-- Layouts -->
             <li class="menu-item">
@@ -584,8 +602,8 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                  , made with ❤️ by 
+                  <a href="/about" target="_blank" class="footer-link fw-bolder">Rizki, Putri & Kanada</a>
                 </div>
                 <div>
                   <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>

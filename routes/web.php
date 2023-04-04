@@ -21,6 +21,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+Route::get('/dashboard/pesanan', function () {
+    return view('dashboard-pesanan');
+});
+
 Route::get('/register', function () {
     return view('register');
 });
