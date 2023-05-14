@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,20 +16,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->name('dashboard');
 
-Route::get('/dashboard/pesanan', function () {
-    return view('dashboard-pesanan');
+Route::get('/tambah', function () {
+    return view('dashboard.paket-tambah');
 });
 
 Route::get('/register', function () {
     return view('register');
-});
+})->name('register');
 
 Route::get('/login', function () {
     return view('login');
+})->name('login');
+
+
+Route::controller(PaketController::class)->name('paket.')->group(function () {
+    Route::get('dashboard/paket', 'index')->name('index');
+    Route::post('/simpan', 'saveUser')->name('saveUser');
+    // Route::get('/tambah', 'tambahForm')->name('tambahForm');
+    Route::get('/edit/{user}', 'editForm')->name('editForm');
+    Route::patch('/update/{user}', 'updateUser')->name('updateUser');
+    Route::delete('/hapus/{user}', 'deleteUser')->name('deleteUser');
 });
