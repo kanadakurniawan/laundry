@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.dashboard')
 @section('content')
 <!-- Content -->
 
@@ -9,18 +9,19 @@
                 <div class="col-8">
                   <div class="card mb-4">
                     <div class="card-body">
-                      <form>
+                      <form action="{{route('paket.simpan')}}" method="POST">
+                        @csrf
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Nama Paket</label>
-                          <input type="text" class="form-control" id="namaPaket" placeholder="Reguler" />
+                          <input name="nama" type="text" class="form-control" id="namaPaket" placeholder="Reguler" />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">Biaya</label>
-                          <input type="text" class="form-control" id="basic-default-company" placeholder="15000" />
+                          <input name="harga" type="text" class="form-control" id="basic-default-company" placeholder="15000" />
                         </div>
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-company">Waktu (hari)</label>
-                          <input type="text" class="form-control" id="basic-default-company" placeholder="3" />
+                          <input name="waktu" type="text" class="form-control" id="basic-default-company" placeholder="3" />
                         </div>
                         <button type="submit" class="btn btn-primary">Tambahkan</button>
                       </form>

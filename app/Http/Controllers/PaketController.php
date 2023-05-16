@@ -15,7 +15,7 @@ class PaketController extends Controller
     public function index(Paket $paket)
     {
         $dataPaket = $paket->get();
-        return view('dashboard.paket', compact('dataPaket'));
+        return view('dashboard.paket.index', compact('dataPaket'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PaketController extends Controller
     {
         $data = $paketRequest->all();
         $paket->create($data);
-        return redirect(route('user.getUser'))->with('success', 'Data user berhasil ditambahkan');
+        return redirect(route('paket.index'))->with('success', 'Data user berhasil ditambahkan');
     }
 
 

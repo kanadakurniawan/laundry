@@ -19,12 +19,12 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard.index');
 })->name('dashboard');
 
-Route::get('/tambah', function () {
-    return view('dashboard.paket-tambah');
-});
+Route::get('dashboard/paket/tambah', function () {
+    return view('dashboard.paket.tambah');
+})->name('paket.tambah');
 
 Route::get('/register', function () {
     return view('register');
@@ -37,7 +37,7 @@ Route::get('/login', function () {
 
 Route::controller(PaketController::class)->name('paket.')->group(function () {
     Route::get('dashboard/paket', 'index')->name('index');
-    Route::post('/simpan', 'saveUser')->name('saveUser');
+    Route::post('/simpan', 'create')->name('simpan');
     // Route::get('/tambah', 'tambahForm')->name('tambahForm');
     Route::get('/edit/{user}', 'editForm')->name('editForm');
     Route::patch('/update/{user}', 'updateUser')->name('updateUser');
